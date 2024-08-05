@@ -13,9 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.OnDelete;
@@ -25,6 +22,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -33,6 +31,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name="tbl_expenses")
+@Builder
 public class Expense 
 {
 
@@ -40,21 +39,22 @@ public class Expense
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(unique = true)
+	private String expenseId;
+	
 	@Column(name="expense_name")
-	@NotBlank(message="Expense name must not be null / no white space /not Blank")
-	@Size(min=3,message="Expense name must be at least 3 characters")
 	private String name;
 	
 	private String description;
 	
 	@Column(name="expense_amount")
-	@NotNull(message="Expense amount must not be null")
 	private BigDecimal amount;
 	
-	@NotBlank(message="Expense Category must not be null / no white space /not Blank")
-	private String category;
+	@ManyToOne(fetch =FetchType.LAZY, optional=false)
+	@JoinColumn(name="category_id", nullable=false)
+	@OnDelete(action=OnDeleteAction.NO_ACTION)
+	private CategoryEntity category;
 	
-	@NotNull(message="Date must not be null")
 	private Date date;	
 	
 	@Column(name="created_at", nullable=false, updatable=false)

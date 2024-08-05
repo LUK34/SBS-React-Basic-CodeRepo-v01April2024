@@ -18,11 +18,15 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long>
 	Page<Expense> findByUserSetupId(Long userId, Pageable page);
 
 	//SELECT * FROM tbl_expenses WHERE user_id=? AND id=?
-	Optional<Expense> findByUserSetupIdAndId(Long userId,  Long expenseId);
+	Optional<Expense> findByUserSetupIdAndExpenseId(Long userId,  String expenseId);
 	
 	
 	//SELECT * FROM tbl_expenses WHERE user_id=? and category=?
 	Page<Expense> findByUserSetupIdAndCategory(Long userId, String category, Pageable page);
+	
+	//SELECT * FROM tbl_expenses WHERE user_id=? and category_id=?
+	Page<Expense> findByUserSetupIdAndCategoryId(Long userId, Long categoryId, Pageable page);
+	
 	
 	//SELECT * FROM tbl_expenses WHERE user_id=? and name LIKE '%keyword%'
 	Page<Expense> findByUserSetupIdAndNameContaining(Long userId,  String keyword,Pageable page);
