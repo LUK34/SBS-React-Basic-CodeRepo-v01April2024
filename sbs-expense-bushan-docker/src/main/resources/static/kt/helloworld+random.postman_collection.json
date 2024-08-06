@@ -1,0 +1,517 @@
+{
+	"info": {
+		"_postman_id": "e5b056d0-f139-4d7c-9c62-9e4528efcdb2",
+		"name": "helloworld+random",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32069751"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/reviews/search/findByBookId?bookid=4",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/reviews/search/findByBookId?bookid=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reviews",
+						"search",
+						"findByBookId"
+					],
+					"query": [
+						{
+							"key": "bookid",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get helloworld using id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/helloworld/8",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"helloworld",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete helloworld using id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/helloworld?id=8",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"helloworld"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get helloworld",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/helloworld?pageNumber=0&pageSize=9",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"helloworld"
+					],
+					"query": [
+						{
+							"key": "pageNumber",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post helloworld",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"oliver\",\r\n    \"age\":27,\r\n    \"location\":\"India\",\r\n    \"email\":\"olala@gmail.com\",\r\n    \"department\":\"CSE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/helloworld",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"helloworld"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put helloworld using id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"name\":\"oliver\",\r\n    \"age\":27,\r\n    \"location\":\"India\",\r\n    \"email\":\"oliver@gmail.com\",\r\n    \"department\":\"CSE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/helloworld/9",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"helloworld",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HelloWorld",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/version",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"version"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get helloworld using name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/helloworld/filterByName?name=oliver",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"helloworld",
+						"filterByName"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "oliver"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get helloworld using name and location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/helloworld/filterByNameAndLocation?name=oliver&location=India",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"helloworld",
+						"filterByNameAndLocation"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "oliver"
+						},
+						{
+							"key": "location",
+							"value": "India"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get helloworld using name keyword",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/helloworld/filterByNameKeyword?name=Test",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"helloworld",
+						"filterByNameKeyword"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get helloworld using name or location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/helloworld/oliver/Kenya",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"helloworld",
+						"oliver",
+						"Kenya"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete helloworld by name",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/helloworld/delete/Test Valida",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"helloworld",
+						"delete",
+						"Test Valida"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post EmployeeV1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Thomas\",\r\n    \"department\": \"CE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/employeev1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employeev1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employeev1 by DepartmentName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/employeev1/filter/CSE",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employeev1",
+						"filter",
+						"CSE"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post EmployeeV2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Chikorita\",\r\n    \"department\": [\r\n        \"CSE\",\"CE\",\"ECE\",\"EEE\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/employeev2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employeev2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post EmployeeV3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Qwerty\",\r\n    \"department\": \"CSE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/employeev3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employeev3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get DepartmentV3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/departmentv3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"departmentv3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employeev3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/employeev3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employeev3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post EmployeeV4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Cyndaquil\",\r\n    \"department\": [\r\n        \"ME\",\"CE\",\"CSE\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/employeev4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employeev4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get EmployeeV4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/employeev4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"employeev4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post tbEmployee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Mamooty\",\r\n    \"location\": \"Kerala\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/tbemployees",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tbemployees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tbEmployee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/tbemployees",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tbemployees"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

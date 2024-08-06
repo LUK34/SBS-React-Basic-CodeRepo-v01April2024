@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "3a8ce90e-5481-4b6e-8f98-c57bd8fb6702",
+		"name": "SBS-MongoDb-CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32069751"
+	},
+	"item": [
+		{
+			"name": "Read Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Write Todos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"todo\": \"aew todo\",\r\n    \"description\":\"aew description\",\r\n    \"completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Todos by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/65f9d22b7b1bad00c5294e14",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"65f9d22b7b1bad00c5294e14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update todo by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \r\n   \"todo\": \"tna todo\",\r\n    \"description\": \"tna description\",\r\n    \"completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/65f9d2387b1bad00c5294e15",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"65f9d2387b1bad00c5294e15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete todo by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/65f9d9577b1bad00c5294e29",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"65f9d9577b1bad00c5294e29"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
